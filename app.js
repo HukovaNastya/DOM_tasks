@@ -14,9 +14,16 @@ title.after(subtitle);
 
 //task 2 of first part
 
-const paragraphContentList = paragraph.innerHTML.replace(/[!.,]/g, '').split(" ");
+const paragraphContentList = paragraph.innerHTML.replace(/[,]/g, "").split(" ");
 const highlightedWords = paragraphContentList.map((word) =>
     word.length >= 8 ? `<span class="highlight">${word}</span>` : word
 ).join(" ");
 
 paragraph.innerHTML = highlightedWords;
+
+//task 3 of  part 1
+
+const listOfSentences = paragraph.innerHTML.split(/[.,!,?]/).filter(sentences=>sentences !== "").map(elem => elem.trimStart()).join('.<br>');
+paragraph.innerHTML = listOfSentences;
+
+
