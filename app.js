@@ -11,3 +11,12 @@ subtitle.innerText = `Amount of words in paragraph: ${amountOfWordsInElem}`;
 
 //second solution
 title.after(subtitle);
+
+//task 2 of first part
+
+const paragraphContentList = paragraph.innerHTML.replace(/[!.,]/g, '').split(" ");
+const highlightedWords = paragraphContentList.map((word) =>
+    word.length >= 8 ? `<span class="highlight">${word}</span>` : word
+).join(" ");
+
+paragraph.innerHTML = highlightedWords;
