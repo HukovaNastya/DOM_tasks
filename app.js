@@ -23,7 +23,12 @@ paragraph.innerHTML = highlightedWords;
 
 //task 3 of  part 1
 
-const listOfSentences = paragraph.innerHTML.split(/[.,!,?]/).filter(sentences=>sentences !== "").map(elem => elem.trimStart()).join('.<br>');
+const listOfSentences = paragraph.innerHTML.split(/[.]/).filter(sentences=>sentences !== "").map(elem => elem.trimStart()).join('.<br>');
 paragraph.innerHTML = listOfSentences;
+
+//task 4 of  part 1
+
+const stringWithQuestionEmoji = paragraph.innerHTML.replace(/[?]/g, "🤔").replace(/[!]/g, "😲");
+paragraph.innerHTML = stringWithQuestionEmoji;
 
 
