@@ -1,0 +1,6 @@
+.label {
+    color: #777;
+    display: block;
+    margin: 5px 0;
+    text-transform: capitalize;
+}
