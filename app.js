@@ -1,5 +1,7 @@
 //task 1 from second part
 
+
+//First solution
 const userNameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirmPassword");
@@ -13,7 +15,15 @@ const addLabelToInput = (input) => {
     }
 }
 
-addLabelToInput(userNameInput);
-addLabelToInput(passwordInput);
-addLabelToInput(confirmPasswordInput);
+// addLabelToInput(userNameInput);
+// addLabelToInput(passwordInput);
+// addLabelToInput(confirmPasswordInput);
+
+//second solution
+
+const inputLists = document.querySelectorAll("input");
+inputLists.forEach((elem) => addLabelToInput(elem));
+
+//task 2  from second part
+
 
