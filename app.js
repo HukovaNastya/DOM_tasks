@@ -58,10 +58,28 @@ function checkLength(input, message) {
     }
 }
 
+//task 3
+function checkPasswordsMatch(input1, input2) {
+    if (input1.value !== input2.value) {
+        showError(input2, "Passwords do not match");
+    }
+}
+
+//task 4
+submitButton.disabled = true
+submitButton.classList.add("disabled");
+
+if(userNameInput.value.lenght && passwordInput.value.length && confirmPasswordInput.value.length) {
+    submitButton.disabled = false;
+    submitButton.classList.remove("disabled");
+}
+
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     checkLength(userNameInput, "Please fill input");
     checkLength(passwordInput, "Please fill input");
     checkLength(confirmPasswordInput, "Please fill input");
+    checkPasswordsMatch(passwordInput, confirmPasswordInput);
+
 });
