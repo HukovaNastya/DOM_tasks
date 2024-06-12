@@ -62,16 +62,25 @@ function checkLength(input, message) {
 function checkPasswordsMatch(input1, input2) {
     if (input1.value !== input2.value) {
         showError(input2, "Passwords do not match");
+    } else {
+        showSuccess(input2)
     }
 }
 
 //task 4
-submitButton.disabled = true
+submitButton.disabled = true;
 submitButton.classList.add("disabled");
 
-if(userNameInput.value.lenght && passwordInput.value.length && confirmPasswordInput.value.length) {
-    submitButton.disabled = false;
-    submitButton.classList.remove("disabled");
+
+
+form.oninput = () => {
+    if(userNameInput.value.length && passwordInput.value.length && confirmPasswordInput.value.length) {
+        submitButton.disabled = false;
+        submitButton.classList.remove("disabled");
+    } else {
+        submitButton.disabled = true;
+        submitButton.classList.add("disabled");
+    }
 }
 
 
@@ -81,5 +90,7 @@ form.addEventListener("submit", function(e) {
     checkLength(passwordInput, "Please fill input");
     checkLength(confirmPasswordInput, "Please fill input");
     checkPasswordsMatch(passwordInput, confirmPasswordInput);
-
+    if(userNameInput.value.length && passwordInput.value.length && confirmPasswordInput.value.length && passwordInput.value === confirmPasswordInput.value) {
+        alert("Registration was succeeded!");
+    }
 });
