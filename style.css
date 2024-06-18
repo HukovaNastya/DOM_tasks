@@ -1,0 +1,16 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-direction-reverse {
+    flex-direction: row-reverse;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+
+.card-deck div + div {
+     padding-right: 50px
+}
+
