@@ -35,19 +35,28 @@ const toggle = document.querySelector('.toggle input')
 const basicPlan = document.getElementById("basic-plan");
 const proPlanPyament = proPlan.querySelector(".pricing");
 const basicPlanPyament = basicPlan.querySelector(".pricing");
+const yearMonth = toggle.parentNode.querySelector('.year-month')
 
 const applySaleForYearMode = (price) => {
-    return  price = `${parseFloat(price) * 10} / year`;
+      price = `${parseFloat(price) * 10} / year`;
+      return price
 }
 
-toggle.addEventListener('click', () => {
-    const yearMonth = toggle.parentNode.querySelector('.year-month')
-    yearMonth.textContent = toggle.checked ? 'Yearly' : 'Monthly';
+const showPriceForMonthMode = (price) => {
+    price = `${parseFloat(price) / 10} / month`;
+    return price
+}
 
+
+toggle.addEventListener('click', () => {
+    yearMonth.textContent = toggle.checked ? 'Yearly' : 'Monthly';
 
     if(yearMonth.textContent === "Yearly") {
         proPlanPyament.textContent = applySaleForYearMode(proPlanPyament.textContent);
         basicPlanPyament.textContent = applySaleForYearMode(basicPlanPyament.textContent);
+    } else {
+        proPlanPyament.textContent = showPriceForMonthMode(proPlanPyament.textContent);
+        basicPlanPyament.textContent = showPriceForMonthMode(basicPlanPyament.textContent);
     }
 })
 
