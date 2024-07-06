@@ -1,0 +1,83 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-direction-reverse {
+    flex-direction: row-reverse;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.card-deck div + div {
+     padding-right: 50px
+}
+
+.background-blue {
+    background-color: #007bff;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.toggle {
+    position: relative;
+}
+
+.toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle .year-month {
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.slider {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background-color: #333;
+    transition: 0.4s;
+    width: 80px;
+    height: 40px;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    transition: 0.4s;
+    top: 0px;
+    left: 00px;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(40px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+.slider.round::before {
+    border-radius: 20px;
+}
